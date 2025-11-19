@@ -1,2 +1,5 @@
 # IoT-Security-Work-of-Paul-Pienkny
-Topic will follow soon
+
+## Topic:
+Operating Systems for IoT Devices:
+Characteristics, Challenges, Attack Surfaces, and OS Landscape
