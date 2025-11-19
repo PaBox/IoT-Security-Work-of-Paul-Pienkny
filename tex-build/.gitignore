@@ -1,0 +1,5 @@
+# Helps folder to be uploaded without unwanted files
+# LaTeX intermediate and output files
+
+# Ignore generated PDF files
+*.pdf

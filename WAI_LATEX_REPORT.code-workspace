@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/tex-build",
+		"latex-workshop.latex.texDirs": [
+			"tex-ressources"
+		],
+		"latex-workshop.latex.autoClean.run": "onBuilt"
+	},
+	"extensions": {
+		"recommendations": [
+			"james-yu.latex-workshop"
+		]
+	}
+}

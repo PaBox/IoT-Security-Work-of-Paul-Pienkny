@@ -1,0 +1,162 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{
+    Operating Systems for IoT Devices: \\
+    Characteristics, Challenges, Attack Surfaces, \\ and OS Landscape
+    \\
+}
+
+\author{
+    \IEEEauthorblockN{Paul Christian Pienkny}
+    \IEEEauthorblockA{
+        \textit{Freie Universit\"at Berlin} \\
+        IoT \& Security Seminar Report - Skeleton Structure
+    }
+}
+
+\maketitle
+
+\begin{abstract}
+    The report aims to provide a comprehensive overview of the current
+    landscape of IoT operating systems, highlighting their differences and 
+    unique features, as well as security challenges they face in the
+    landscape of rapidly evolving IoT ecosystems.  \\ \\
+    (This document is only a tentative skeleton structure for the upcoming report)
+    \\
+\end{abstract}
+
+\begin{IEEEkeywords}
+    Operating Systems (OS), Internet of Things (IoT),
+    Characteristics, Security Challenges, Attack Surfaces, 
+\end{IEEEkeywords}
+
+\section{Introduction \\ (1 page)}
+
+    \subsection{Security Relevance of IoT Devices \& Operating Systems}
+
+    \subsection{Objectives \& Research Questions}
+
+    \subsection{Report Structure}
+
+\section{Fundamentals \\ (2 pages)}
+
+    \subsection{IoT Devices \& Architectures}
+
+    \subsection{Requirements for IoT Operating Systems}
+        Resource constraints, real-time capabilities, \\
+        (energy) efficiency\dots
+
+    \subsection{Security Fundamentals}
+
+        Threats, vulnerabilities, attack vectors \\
+        in IoT environments\dots \\
+        (general theoretical background)
+
+\section{Overview of IoT Operating Systems \\ (2.5-3 pages)}
+
+    \subsection{Brief Introduction of Selected IoT Operating Systems}
+
+        RIOT, FreeRTOS, OAT, (Zephyr, TinyOS,)\dots \\
+        Buildroot(Linux), Yocto(Linux)\dots
+
+    \subsection{Comparison of Selected Operating Systems}
+
+        Use cases, (kernel) architecture, resource consumption, \\
+        security features, real-time capabilities\dots
+
+    \subsection{Known Vulnerabilities or Attacks on \\ IoT Operating Systems}
+
+        e.g., related to Privilege Escalation, Memory Protection\dots
+
+\section{Security Features \& Requirements of IoT Operating Systems \\ (3-4 pages)}
+
+    \subsection{Security Principles}
+
+        Avoidance Principle, Minimality Principle, \\
+        Defense-in-Depth, Fail Secure, \\
+        Secure-by-Design\dots \\
+        (concrete guidelines and methods)
+
+    \subsection{Integrity \& Authenticity}
+
+        e.g., Secure Boot, Code Signing, (Firmware-)Updates\dots
+
+    \subsection{Isolation \& Access Control}
+
+        e.g., Memory Protection, Sandboxing, \\
+        (Micro-)Kernel Architecture\dots
+
+    \subsection{OS-Specific Security Mechanisms}
+
+        e.g. RIOT Secure Boot, FreeRTOS/Zephyr Memory Protection\dots
+
+\section{Challenges \& Research Directions \\ (2.5-3 pages)}
+
+    \subsection{Resource Constraints vs. Security Mechanisms}
+
+    \subsection{Lifecycle Management \& Update Strategies}
+
+    \subsection{Formal Verification, Microkernels \& Trusted Execution Environments}
+
+    \subsection{Recent Trends in Research}
+
+        e.g., Edge Security, rBPF, WebAssembly, Trusted Execution Environments, \\
+        Microkernel Isolation, Lightweight Cryptography\dots
+
+\section{Conclusion \& Outlook \\ (1 page)}
+
+    \subsection{Summary of Findings}
+
+    \subsection{Future Developments \& Research Perspectives}
+
+    \subsection{Remaining Open Questions \& Challenges}
+
+%
+% LITERATURE
+%
+
+\begin{thebibliography}{00}
+
+\bibitem{survey-layered-iot}
+\href{https://doi.org/10.1002/ett.3935}{A survey of security and privacy issues in the Internet of Things from the layered context (2020, published)}
+
+\bibitem{oat}
+\href{https://doi.org/10.1109/SP40000.2020.00042}{OAT: Attesting Operation Integrity of Embedded Devices (2020, published)}
+
+\bibitem{riot-iot-os}
+\href{https://doi.org/10.1109/JIOT.2018.2815038}{RIOT: an Open Source Operating System for Low-end Embedded Devices in the IoT (2018, published)}
+% Free Access: \href{https://ilab-pub.imp.fu-berlin.de/papers/bghkl-rosos-18-prepub.pdf}{Preprint Version}
+
+\bibitem{trusted-linux}
+\href{https://www.kernel.org/doc/ols/2007/ols2007v2-pages-79-86.pdf}{Trusted secure embedded Linux (2007, published)}
+
+\bibitem{iot-os-survey-2023}
+\href{https://doi.org/10.48550/arXiv.2310.19825}{A Survey of the Security Challenges and Requirements for IoT Operating Systems (2023, unpublished)}
+
+\bibitem{rtos-iot}
+\href{https://doi.org/10.1109/WSCAR.2016.21}{Real Time Operating Systems for the Internet of Things, Vision, Architecture and Research Directions (2016, published)}
+
+\bibitem{iot-firmware-security}
+\href{https://doi.org/10.1007/s43926-023-00045-2}{A survey on IoT \& embedded device firmware security: architecture, extraction techniques, and vulnerability analysis frameworks (2023, published)}
+
+% Own references are added here by APA style, e.g.:
+% \bibitem{pX} P. C. Pienkny, "Title of my own referenced work," Journal Name, vol. X, no. Y, pp. Z-ZZ, Year. + (Nothing for Books, "unpublished" or "in press" for published works)
+
+\end{thebibliography}
+
+\vspace{12pt}
+
+\end{document}
