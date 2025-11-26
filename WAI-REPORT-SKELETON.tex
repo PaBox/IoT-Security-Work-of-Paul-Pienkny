@@ -23,7 +23,7 @@
     \IEEEauthorblockN{Paul Christian Pienkny}
     \IEEEauthorblockA{
         \textit{Freie Universit\"at Berlin} \\
-        IoT \& Security Seminar Report - Skeleton Structure
+        IoT \& Security Seminar Report - Skeleton Structure Reworked
     }
 }
 
@@ -41,11 +41,14 @@
 \begin{IEEEkeywords}
     Operating Systems (OS), Internet of Things (IoT),
     Characteristics, Security Challenges, Attack Surfaces, 
+    MCUs, Embedded Devices
 \end{IEEEkeywords}
 
 \section{Introduction \\ (1 page)}
 
-    \subsection{Security Relevance of IoT Devices \& Operating Systems}
+    \subsection{Security Relevance of IoT Devices \& MCU-based Systems}
+
+        Brief context: Why especially MCU-based systems are a security concern\dots
 
     \subsection{Objectives \& Research Questions}
 
@@ -53,9 +56,13 @@
 
 \section{Fundamentals \\ (2 pages)}
 
-    \subsection{IoT Devices \& Architectures}
+    \subsection{IoT Hardware Models \& Architectures}
 
-    \subsection{Requirements for IoT Operating Systems}
+        MCUs vs. MPUs - focus on MCUs, \\
+        typical hardware architectures, \dots
+
+    \subsection{Requirements for MCU IoT Operating Systems}
+
         Resource constraints, real-time capabilities, \\
         (energy) efficiency\dots
 
@@ -65,25 +72,9 @@
         in IoT environments\dots \\
         (general theoretical background)
 
-\section{Overview of IoT Operating Systems \\ (2.5-3 pages)}
+\section{Security Requirements \& Principles for IoT Operating Systems \\ (3 pages)}
 
-    \subsection{Brief Introduction of Selected IoT Operating Systems}
-
-        RIOT, FreeRTOS, OAT, (Zephyr, TinyOS,)\dots \\
-        Buildroot(Linux), Yocto(Linux)\dots
-
-    \subsection{Comparison of Selected Operating Systems}
-
-        Use cases, (kernel) architecture, resource consumption, \\
-        security features, real-time capabilities\dots
-
-    \subsection{Known Vulnerabilities or Attacks on \\ IoT Operating Systems}
-
-        e.g., related to Privilege Escalation, Memory Protection\dots
-
-\section{Security Features \& Requirements of IoT Operating Systems \\ (3-4 pages)}
-
-    \subsection{Security Principles}
+    \subsection{Security Principles for MCU-based Systems}
 
         Avoidance Principle, Minimality Principle, \\
         Defense-in-Depth, Fail Secure, \\
@@ -92,37 +83,79 @@
 
     \subsection{Integrity \& Authenticity}
 
-        e.g., Secure Boot, Code Signing, (Firmware-)Updates\dots
+        e.g. Secure Boot, Firmware-Signatures, \\
+        Update-Authenticity, Rollback Protection\dots
 
     \subsection{Isolation \& Access Control}
 
-        e.g., Memory Protection, Sandboxing, \\
-        (Micro-)Kernel Architecture\dots
+        e.g. Memory Protection, Task-Isolation, \\
+        Scheduling-Isolation, Kernel Architecture\dots
 
-    \subsection{OS-Specific Security Mechanisms}
+    \subsection{Lifecycle Security Requirements}
 
-        e.g. RIOT Secure Boot, FreeRTOS/Zephyr Memory Protection\dots
+        e.g. Provisioning, Update-Mechanisms, \dots \\
+        (requirements and not specific implementations)
+
+\section{Overview of IoT Operating Systems \\ (3.5-4 pages)}
+
+    \subsection{Brief Introduction of Selected MCU-based IoT Operating Systems}
+
+        RIOT, FreeRTOS, (Zephyr, TinyOS)\dots \\
+        Maybe Mbed OS?
+
+    \subsection{Comparison of Selected Operating Systems}
+
+        Use cases, (kernel) architecture, resource consumption, \\
+        security features, real-time capabilities\dots
+
+    \subsection{Known Vulnerabilities and Historical Attacks}
+
+        e.g., related to Privilege Escalation, Memory Protection, \\
+        Buffer overflow\dots
+
+    \subsection{OS-specific Security Mechanisms}
+
+        \subsubsection{RIOT Security Features}
+
+            e.g. Secure-Boot, Cryptographic Libraries, Modularity,\dots
+
+        \subsubsection{FreeRTOS Security Features}
+
+            e.g. Memory Protection, Task Isolation, Secure Sockets,\dots
+
+        \subsubsection{Zephyr Security Features}
+
+            e.g. Kernel Mode Separation, MPU Abstractions, MCUboot,\dots
+
+        \subsubsection{TinyOS Security Features}
+
+            e.g. Component-based Architecture, Access Control,\dots
 
 \section{Challenges \& Research Directions \\ (2.5-3 pages)}
 
     \subsection{Resource Constraints vs. Security Mechanisms}
 
+        e.g. Isolation, Cryptography, Scheduling\dots
+
     \subsection{Lifecycle Management \& Update Strategies}
+
+        e.g. Secure OTA, Rollback Protection, Maintenance\dots \\
+        (and why these will remain challenging)
 
     \subsection{Formal Verification, Microkernels \& Trusted Execution Environments}
 
     \subsection{Recent Trends in Research}
 
-        e.g., Edge Security, rBPF, WebAssembly, Trusted Execution Environments, \\
+        e.g., Edge Security, rBPF on MCU, Trusted Execution Environments, \\
         Microkernel Isolation, Lightweight Cryptography\dots
 
 \section{Conclusion \& Outlook \\ (1 page)}
 
-    \subsection{Summary of Findings}
+    \subsection{Summary of Insights}
 
-    \subsection{Future Developments \& Research Perspectives}
+    \subsection{Future Developments in IoT OS Security}
 
-    \subsection{Remaining Open Questions \& Challenges}
+    \subsection{Open Questions \& Ongoing Challenges}
 
 %
 % LITERATURE
