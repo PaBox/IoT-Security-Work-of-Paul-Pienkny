@@ -23,7 +23,7 @@
     \IEEEauthorblockN{Paul Christian Pienkny}
     \IEEEauthorblockA{
         \textit{Freie Universit\"at Berlin} \\
-        IoT \& Security Seminar Report
+        IoT \& Security Seminar Report - ALPHA
     }
 }
 
@@ -33,56 +33,161 @@
     The report aims to provide a comprehensive overview of the current
     landscape of IoT operating systems, highlighting their differences and 
     unique features, as well as security challenges they face in the
-    landscape of rapidly evolving IoT ecosystems.
+    landscape of rapidly evolving IoT ecosystems.  \\ \\
+    (This document is only an ALPHA version of the upcoming report)
     \\
 \end{abstract}
 
 \begin{IEEEkeywords}
     Operating Systems (OS), Internet of Things (IoT),
-    Characteristics, Security Challenges, Attack Surfaces
+    Characteristics, Security Challenges, Attack Surfaces, 
+    Microcontroller Unit, Embedded Devices
 \end{IEEEkeywords}
 
 \section{Introduction}
 
-    \subsection{Security Relevance of IoT Devices \& Operating Systems}
+    \subsection{Security Relevance of IoT Devices \& MCU-based Systems}
+
+        "Brief context: Why especially MCU-based systems are a security concern\dots"
+
+        Good Overview for Questions and Numbers.
+        \cite{tanSoKWheresComprehensive}
+
+        Reasons of Security Relevance for Embedded Systems.
+        \cite{fournarisExploitingHardwareVulnerabilities2017}
+
+        Reasons regarding intellectual property.
+        \cite{bognarIntellectualPropertyExposure}
+
+        Challenges with IoT Devices.
+        \cite{azizalkabirSecuringIoTDevices2023}
+
+        Security Requirements of IoT Systems (on MCUs).
+        \cite{pearsonMisconceptionHardwareCost2019}
+
+        Use Cases of RTOS in IoT.
+        \cite{abdelsameaRealTimeOperating2016a}
+
+        Severity of IoT System vulnerabilities.
+        \cite{hossainHolisticAnalysisInternet2024}
 
     \subsection{Objectives \& Research Questions}
 
+        Goal is to highlight differences, current problems and
+        possible solutions regarding the security
+        of (especially MCU-based) IoT operating systems on IoT devices. \\
+
+        Separating between problems that are bound to Hardware/Architecture
+        and problems that are bound to the Operating System.
+
     \subsection{Report Structure}
 
-\section{Fundamentals}
+\section{Fundamentals \& Characteristics}
 
-    \subsection{IoT Devices \& Architectures}
+    "How do MCU-based IoT Systems work technically, what are their characteristics, \\
+    and what are the general security fundamentals in this context?"
 
-    \subsection{Requirements for IoT Operating Systems}
+    \subsection{IoT Hardware Models \& Architectures}
+
+        MCUs vs. MPUs - focus on MCUs, \\
+        typical hardware architectures, \dots \\
+
+        Differences in Architecture on ARM.
+        \cite{ngabonzizaTrustZoneExplainedArchitectural2016a}
+        
+        Architecture Types and Features of OS for IoT.
+        \cite{javedInternetThingsIoT2018}
+
+    \subsection{Characteristics of MCU IoT Operating Systems}
+
         Resource constraints, real-time capabilities, \\
-        (energy) efficiency\dots
+        (energy) efficiency\dots \\
+
+        List of possible Hardware Limitations.
+        \cite{tanSoKWheresComprehensive}
+
+        Resource Exhaustion as a Security Issue.
+        \cite{azizalkabirSecuringIoTDevices2023}
+
+        What is an RTOS?
+        Includes Architectural Layers of RTOS for IoT.
+        \cite{abdelsameaRealTimeOperating2016a}
+
+        Data for different specifications of IoT OSes.
+        \cite{chandraOperatingSystemsInternet2016}
 
     \subsection{Security Fundamentals}
 
         Threats, vulnerabilities, attack vectors \\
         in IoT environments\dots \\
-        (general theoretical background)
+        (general theoretical background) \\
 
-\section{Overview of IoT Operating Systems}
+        Good example for Vulerabilities, Architectural Issues.
+        \cite{tanSoKWheresComprehensive}
 
-    \subsection{Brief Introduction of Selected IoT Operating Systems}
+        Specifically Side-Channel-Attacks on MCUs.
+        \cite{fournarisExploitingHardwareVulnerabilities2017}
 
-        RIOT, FreeRTOS, (Zephyr, TinyOS,)\dots \\
-        Buildroot(Linux), Yocto(Linux)\dots
+        Common Weaknesses/Vulnerabilities:
+        \cite{al-boghdadyPresenceTrendsCauses2021}
+
+        Attacks on TEEs.
+        Also Side-Channel-Attacks.
+        Architectural Attacks.
+        \cite{munozSurveyInsecurityTrusted2023}
+
+        Common Threats to IoT Devices.
+        Also Side-Channel-Attacks, Network Attacks.
+        Security Issue Layers.
+        \cite{azizalkabirSecuringIoTDevices2023}
+
+        Kinds of Securities (Not Layers).
+        \cite{pearsonMisconceptionHardwareCost2019}
+
+        Constraints on employing conventional security solutions.
+        Attack Surfaces \& Device, Communication, Service Vulnerabilities.
+        \cite{hossainHolisticAnalysisInternet2024}
+
+    \subsection{Brief Introduction of Selected MCU-based IoT Operating Systems}
+
+        RIOT, FreeRTOS, Zephyr, Mbed OS, Contiki, TinyOS \\
+
+        Windows, Linux, Android are not in the list,
+        because they not MCU-based.
+        Also good Overview of Operating Systems.
+        \cite{antonyReviewIoTOperating2020}
+
+        Another good Overview of Operating Systems.
+        \cite{al-boghdadyPresenceTrendsCauses2021}
+
+        General informations about various OSes.
+        \cite{javedInternetThingsIoT2018}
+
 
     \subsection{Comparison of Selected Operating Systems}
 
         Use cases, (kernel) architecture, resource consumption, \\
-        security features, real-time capabilities\dots
+        security features, real-time capabilities\dots \\
 
-    \subsection{Known Vulnerabilities or Attacks on IoT Operating Systems}
+        Use cases and characteristics of multiple OSes.
+        \cite{javedInternetThingsIoT2018}
 
-        e.g., related to Privilege Escalation, Memory Protection\dots
+        Scheduling on different OSes.
+        Also Networking, Memory Management.
+        \cite{javedInternetThingsIoT2018}
 
-\section{Security Features \& Requirements of IoT Operating Systems}
+        Overview of OSes and from into RTOS.
+        Figure 3 gives a good overview over the different OSes/Groups.
+        Also includes complete comparison chart for (probably all)
+        different OSes.
+        \cite{chandraOperatingSystemsInternet2016}
 
-    \subsection{Security Principles}
+\section{Security Requirements \& Principles for IoT Operating Systems}
+
+    "What security requirements do these systems have to fulfill, \\
+    and which principles guide their design?"
+
+    \subsection{Security Principles for MCU-based Systems}
 
         Avoidance Principle, Minimality Principle, \\
         Defense-in-Depth, Fail Secure, \\
@@ -91,79 +196,137 @@
 
     \subsection{Integrity \& Authenticity}
 
-        e.g., Secure Boot, Code Signing, (Firmware-)Updates\dots
+        e.g. Secure Boot, Firmware-Signatures, \\
+        Update-Authenticity, Rollback Protection\dots
 
     \subsection{Isolation \& Access Control}
 
-        e.g., Memory Protection, Sandboxing, \\
-        (Micro-)Kernel Architecture\dots
+        e.g. Memory Protection, Task-Isolation, \\
+        Scheduling-Isolation, Kernel Architecture\dots
 
-    \subsection{OS-Specific Security Mechanisms}
+    \subsection{Lifecycle Security Requirements}
 
-        e.g. RIOT Secure Boot, FreeRTOS/Zephyr Memory Protection\dots
+        e.g. Provisioning, Update-Mechanisms, \dots \\
+        (requirements and not specific implementations)
+
+\section{Overview of IoT Operating Systems}
+
+    "How do selected IoT OSes implement these principles and requirements? \\
+    What are their differences, strengths, and weaknesses?" \\
+
+    OS Comparison Table could also help here.
+    \cite{chandraOperatingSystemsInternet2016}
+
+    \subsection{Known Vulnerabilities and Historical Attacks}
+
+        e.g. related to Privilege Escalation, Memory Protection, \\
+        Buffer overflow\dots
+
+    \subsection{OS-specific Security Mechanisms}
+
+        \subsubsection{RIOT Security Features}
+
+            e.g. Secure-Boot, \\
+            Cryptographic Libraries, Modularity,\dots
+
+        \subsubsection{FreeRTOS Security Features}
+
+            e.g. Memory Protection, Task Isolation, Secure Sockets,\dots
+
+        \subsubsection{Zephyr Security Features}
+
+            e.g. Kernel Mode Separation, MPU Abstractions, MCUboot,\dots
+
+        \subsubsection{TinyOS Security Features}
+
+            e.g. Component-based Architecture, Access Control,\dots
 
 \section{Challenges \& Research Directions}
 
+    "Why will it stay challenging to secure IoT OSes, \\
+    and what are current research trends?" \\
+
     \subsection{Resource Constraints vs. Security Mechanisms}
+
+        e.g. Isolation, Cryptography, Scheduling\dots \\
+
+        Hardware \& Cost may not be a bottleneck of IoT Security.
+        \cite{pearsonMisconceptionHardwareCost2019}
 
     \subsection{Lifecycle Management \& Update Strategies}
 
+        e.g. Secure OTA, Rollback Protection, Maintenance\dots \\
+        (and why these will remain challenging)
+
     \subsection{Formal Verification, Microkernels \& Trusted Execution Environments}
+
+        Trusted Execution Environment: TrustZone.
+        \cite{ngabonzizaTrustZoneExplainedArchitectural2016a}
+
+        List of Trusted Execution Environments.
+        How to still get around TEE.
+        \cite{bognarIntellectualPropertyExposure}
+
+        Capabilities, Applications of TEEs (also TrustZone).
+        Exploits in TrustZone
+        \cite{munozSurveyInsecurityTrusted2023}
 
     \subsection{Recent Trends in Research}
 
-        e.g. OAT(Testing)\dots
+        e.g. Edge Security, rBPF on MCU, Trusted Execution Environments, \\
+        Microkernel Isolation, Lightweight Cryptography\dots \\
 
-        e.g., Edge Security, rBPF, WebAssembly, Trusted Execution Environments, \\
-        Microkernel Isolation, Lightweight Cryptography\dots
+        Features for code protection of isolation.
+        \cite{bognarIntellectualPropertyExposure}
+
+        Countermeasures for software-based, architecture-based,
+        memory protection.
+        \cite{munozSurveyInsecurityTrusted2023}
+
+        Solutions to various security layers like
+        hardware, system/firmware, network, data.
+        \cite{pearsonMisconceptionHardwareCost2019}
+
+        Research Directions of RTOSs for IoT.
+        \cite{abdelsameaRealTimeOperating2016a}
 
 \section{Conclusion \& Outlook}
 
-    \subsection{Summary of Findings}
+    \subsection{Summary of Insights}
 
-    \subsection{Future Developments \& Research Perspectives}
+    \subsection{Future Developments in IoT OS Security}
 
-    \subsection{Remaining Open Questions \& Challenges}
+        Possible Solutions for Architectural and ISA Issues,
+        Privilege Separation, Memory Corruption,
+        Code Disclosure, Memory-Safe Programming,
+        Firmware Updates \& Future Directions
+        \cite{tanSoKWheresComprehensive}
+
+        More Examples for future Work.
+        \cite{al-boghdadyPresenceTrendsCauses2021}
+
+        Available Solutions to mitigate IoT threats.
+        (Table 6)
+        \cite{hossainHolisticAnalysisInternet2024}
+
+    \subsection{Open Questions \& Ongoing Challenges}
+
+        Open Challenges for TEEs.
+        \cite{munozSurveyInsecurityTrusted2023}
+
+        Open Challenges for IoT Devices.
+        \cite{azizalkabirSecuringIoTDevices2023}
+
+        Open Challenges in general IoT Security.
+        \cite{hossainHolisticAnalysisInternet2024}
 
 %
 % LITERATURE
 %
 
-\begin{thebibliography}{00}
-
-\bibitem{oat-testing}
-\href{https://doi.org/10.1109/SP40000.2020.00042}{OAT: Attesting Operation Integrity of Embedded Devices (2020, published)}
-
-\bibitem{riot-iot-os}
-\href{https://doi.org/10.1109/JIOT.2018.2815038}{RIOT: an Open Source Operating System for Low-end Embedded Devices in the IoT (2018, published)}
-% Free Access: \href{https://ilab-pub.imp.fu-berlin.de/papers/bghkl-rosos-18-prepub.pdf}{Preprint Version}
-
-\bibitem{trusted-embedded-linux}
-\href{https://www.kernel.org/doc/ols/2007/ols2007v2-pages-79-86.pdf}{Trusted secure embedded Linux (2007, published)}
-
-\bibitem{survey-layered-iot-2020}
-\href{https://doi.org/10.1002/ett.3935}{A survey of security and privacy issues in the Internet of Things from the layered context (2020, published)}
-
-\bibitem{survey-iot-os-2023}
-\href{https://doi.org/10.48550/arXiv.2310.19825}{A Survey of the Security Challenges and Requirements for IoT Operating Systems (2023, unpublished)}
-
-\bibitem{rtos-iot-os}
-\href{https://doi.org/10.1109/WSCAR.2016.21}{Real Time Operating Systems for the Internet of Things, Vision, Architecture and Research Directions (2016, published)}
-
-\bibitem{iot-firmware-security}
-\href{https://doi.org/10.1007/s43926-023-00045-2}{A survey on IoT \& embedded device firmware security: architecture, extraction techniques, and vulnerability analysis frameworks (2023, published)}
-
-\bibitem{iot-firmware-security}
-\href{https://doi.org/10.1109/SOCA.2014.58}{IoT Security: Ongoing Challenges and Research Opportunities (2014, published)}
-% Free Access: https://kalli.no/exre-site/pdf/dat159/iot/IoT+Security-+Ongoing+Challenges+and+Research+Opportunities.pdf
-
-% Own references are added here by APA style, e.g.:
-% \bibitem{pX} P. C. Pienkny, "Title of my own referenced work," Journal Name, vol. X, no. Y, pp. Z-ZZ, Year. + (Nothing for Books, "unpublished" or "in press" for published works)
-
-% Efficient Isolation of Trusted Subsystems in Embedded Systems (Journal pp. 344-361)
-% https://www.researchgate.net/profile/Mauro-Conti/publication/221273084_CED/links/55e3786108aecb1a7cc9cf29/CED.pdf#page=356
-
-\end{thebibliography}
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{tex-ressources/WAI-BIB}
 
 \vspace{12pt}
 

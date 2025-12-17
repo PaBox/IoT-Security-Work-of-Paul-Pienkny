@@ -9,7 +9,13 @@
 		"latex-workshop.latex.texDirs": [
 			"tex-ressources"
 		],
-		"latex-workshop.latex.autoClean.run": "onBuilt"
+		"latex-workshop.latex.autoClean.run": "onBuilt",
+		"latex-workshop.latex.bibDirs": [
+			"tex-ressources"
+		],
+		"cSpell.words": [
+			"Microcontroller"
+		]
 	},
 	"extensions": {
 		"recommendations": [
